@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C'EST LE MEILLEUR SITE DE L'ANNÉE</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('110591 ciel.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .horizontal-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            padding-top: 60px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .vertical-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .vertical-item {
+            margin: 10px 0;
+        }
+        .title {
+            font-size: 4em;
+            color: red;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        h1.hacking-title {
+            font-size: 4em;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+        }
+        /* Div caché pour les résultats */
+        .result {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .result p {
+            margin: 5px 0;
+        }
+        .result .teams {
+            display: flex;
+            justify-content: space-around;
+        }
+        .youtube-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-image: url('https://w7.pngwing.com/pngs/208/269/png-transparent-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-logo-thumbnail.png');
+            background-size: cover;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-selector">
+            Langue:
+            <select onchange="changeLanguage(this.value)">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </div>
+    <h1 class="hacking-title">Hacking 1-99 Betting Tips</h1>
+    <div class="vertical-container">
+        <h1 class="vertical-item title" data-lang="h1_text">C'EST LE MEILLEUR SITE DE L'ANNÉE</h1>
+        <p class="vertical-item" data-lang="p_text">Le meilleur des sites de paris</p>
+    </div>
+    <div class="horizontal-container">
+        <button class="button" onclick="showResult('score_exact_result')" data-lang="score_exact">Score exact</button>
+        <button class="button" onclick="showResult('htft_result')" data-lang="htft">HT/FT</button>
+        <button class="button" onclick="showResult('simple_result')" data-lang="simple">Simple</button>
+        <button class="button" onclick="showResult('1x2_result')" data-lang="1x2">1x2</button>
+        <button class="button" onclick="showResult('under25_result')" data-lang="under25">Under 2.5</button>
+        <button class="button" onclick="showResult('over25_result')" data-lang="over25">Over 2.5</button>
+        <button class="button" onclick="showResult('both_team_result')" data-lang="both_team">Both teams</button>
+    </div>
+
+    <!-- Div caché pour les résultats -->
+    <div id="score_exact_result" class="result">
+        <h2 data-lang="score_exact">Résultats Score exact</h2>
+        <div class="teams">
+            <p>Équipe 1: PSG</p>
+            <p>Équipe 2: Marseille</p>
+        </div>
+        <p>Score exact: 2-1</p>
+    </div>
+    <div id="htft_result" class="result">
+        <h2 data-lang="htft">Résultats HT/FT</h2>
+        <div class="teams">
+            <p>Équipe 1: Liverpool</p>
+            <p>Équipe 2: Manchester City</p>
+        </div>
+        <p>HT/FT: 1/2</p>
+    </div>
+    <div id="simple_result" class="result">
+        <h2 data-lang="simple">Résultats Simples</h2>
+        <div class="teams">
+            <p>Équipe 1: Juventus</p>
+            <p>Équipe 2: AC Milan</p>
+        </div>
+        <p>Score: 3-2</p>
+    </div>
+    <div id="1x2_result" class="result">
+        <h2 data-lang="1x2">Résultats 1x2</h2>
+        <div class="teams">
+            <p>Équipe 1: Bayern Munich</p>
+            <p>Équipe 2: Borussia Dortmund</p>
+        </div>
+        <p>Résultat: 1</p>
+    </div>
+    <div id="under25_result" class="result">
+        <h2 data-lang="under25">Résultats Under 2.5</h2>
+        <div class="teams">
+            <p>Équipe 1: Real Madrid</p>
+            <p>Équipe 2: Barcelona</p>
+        </div>
+        <p>Résultat: Under 2.5</p>
+    </div>
+    <div id="over25_result" class="result">
+        <h2 data-lang="over25">Résultats Over 2.5</h2>
+        <div class="teams">
+            <p>Équipe 1: Inter Milan</p>
+            <p>Équipe 2: AS Roma</p>
+        </div>
+        <p>Résultat: Over 2.5</p>
+    </div>
+    <div id="both_team_result" class="result">
+        <h2 data-lang="both_team">Résultats Both teams</h2>
+        <div class="teams">
+            <p>Équipe 1: Paris FC</p>
+            <p>Équipe 2: AS Monaco</p>
+        </div>
+        <p>Résultat: Oui</p>
+    </div>
+
+    <!-- Icône YouTube -->
+    <a href="lien_vers_votre_chaine_youtube" target="_blank" class="youtube-icon"></a>
+
+    <!-- JavaScript pour la traduction -->
+    <script>
+        // Définition des textes multilingues
+        const language = {
+            "h1_text": {
+                "fr": "C'EST LE MEILLEUR SITE DE L'ANNÉE",
+                "en": "THE BEST SITE OF THE YEAR",
+                "es": "EL MEJOR SITIO DEL AÑO",
+                "ar": "أفضل موقع لهذا العام"
+            },
+            "p_text": {
+                "fr": "Le meilleur des sites de paris",
+                "en": "The best of betting sites",
+                "es": "El mejor de los sitios de apuestas",
+                "ar": "أفضل المواقع للمراهنة"
+            },
+            "score_exact": {
+                "fr": "Score exact",
+                "en": "Exact score",
+                "es": "Puntuación exacta",
+                "ar": "النتيجة الدقيقة"
+            },
+            "htft": {
+                "fr": "HT/FT",
+                "en": "HT/FT",
+                "es": "HT/FT",
+                "ar": "HT/FT"
+            },
+            "simple": {
+                "fr": "Simple",
+                "en": "Simple",
+                "es": "Simple",
+                "ar": "بسيط"
+            },
+            "1x2": {
+                "fr": "1x2",
+                "en": "1x2",
+                "es": "1x2",
+                "ar": "1x2"
+            },
+            "under25": {
+                "fr": "Under 2.5",
+                "en": "Under 2.5",
+                "es": "Under 2.5",
+                "ar": "Under 2.5"
+            },
+            "over25": {
+                "fr": "Over 2.5",
+                "en": "Over 2.5",
+                "es": "Over 2.5",
+                "ar": "Over 2.5"
+            },
+            "both_team": {
+                "fr": "Both teams",
+                "en": "Both teams",
+                "es": "Both teams",
+                "ar": "Both teams"
+            }
+        };
+
+        // Fonction pour changer la langue
+        function changeLanguage(lang) {
+            document.querySelectorAll("[data-lang]").forEach(function(element) {
+                const key = element.getAttribute("data-lang");
+                if (key in language) {
+                    element.textContent = language[key][lang];
+                }
+            });
+        }
+
+        // Fonction pour afficher les résultats
+        function showResult(resultId) {
+            // Masquer tous les divs de résultats
+            document.querySelectorAll('.result').forEach(function(element) {
+                element.style.display = 'none';
+            });
+
+            // Afficher le div de résultat correspondant
+            document.getElementById(resultId).style.display = 'block';
+        }
+
+        // Initialisation avec la langue par défaut (fr)
+        changeLanguage("fr");
+    </script>
+<!-- Icône YouTube -->
+<a href="https://www.youtube.com/@Hacking1-99" target="_blank" class="youtube-icon"></a>
+</body>
+</html>
